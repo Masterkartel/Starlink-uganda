@@ -241,11 +241,11 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     </div>
 
     <section class="ref-card">
-      <div class="ref-lbl">ID de Référence</div>
+      <div class="ref-lbl">Reference ID</div>
       <div class="ref-val" id="refVal">#STL-CG-000000</div>
       <button class="copy-btn" onclick="copyRef()" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-        <span id="copyTxt">Copier la référence</span>
+        <span id="copyTxt">Copy reference</span>
       </button>
     </section>
 
@@ -281,7 +281,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
         <div class="row deposit">
           <span class="row-k">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-            <span>Montant payé</span>
+            <span>Amount paid</span>
           </span>
           <span class="row-v" id="rPrice">—</span>
         </div>
@@ -302,7 +302,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     </section>
 
     <section class="next">
-      <div class="next-title">Prochaines étapes</div>
+      <div class="next-title">Next steps</div>
       <ol class="steps">
         <li class="step">
           <span class="step-num">1</span>
@@ -336,7 +336,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       </button>
       <button class="btn btn-g" onclick="shareRef()" type="button" id="shareBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="10.5" x2="15.4" y2="6.5"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/></svg>
-        Enregistrer ma référence
+        Save my reference
       </button>
     </div>
 
@@ -434,12 +434,12 @@ setText('rPrice', forfait.price || '—');
 
 async function runLog(){
   var logs = [
-    {t:400, cls:'', txt:'<em>[INFO]</em> Connection passerelle Airtel Uganda établie'},
-    {t:900, cls:'', txt:'<em>[INFO]</em> Satellite plan : ' + (forfait.name||'—') + ' · ' + (forfait.price||'—')},
-    {t:1500, cls:'', txt:'<em>[INFO]</em> Number verified : +256 ' + (auth.phone || forfait.phone || '—')},
+    {t:400, cls:'', txt:'<em>[INFO]</em> Airtel Uganda gateway connection established'},
+    {t:900, cls:'', txt:'<em>[INFO]</em> Satellite plan: ' + (forfait.name||'—') + ' · ' + (forfait.price||'—')},
+    {t:1500, cls:'', txt:'<em>[INFO]</em> Number verified: +256 ' + (auth.phone || forfait.phone || '—')},
     {t:2200, cls:'warn', txt:'<em>[WAIT]</em> Authorising payment…'},
     {t:3000, cls:'', txt:'<em>[INFO]</em> Transmission vers Airtel Money…'},
-    {t:3800, cls:'ok', txt:'<em>[OK]</em>  Reference #' + ref + ' enregistrée'},
+    {t:3800, cls:'ok', txt:'<em>[OK]</em>  Reference #' + ref + ' saved'},
     {t:4600, cls:'warn', txt:'<em>[WAIT]</em> Activation du satellite en cours…'}
   ];
   var el = document.getElementById('termLog');
@@ -460,25 +460,25 @@ function copyRef(){
   hap([8,4,12]);
   var txtEl = document.getElementById('copyTxt');
   var orig = txtEl.textContent;
-  txtEl.textContent = 'Copié !';
+  txtEl.textContent = 'Copied!';
   setTimeout(function(){ txtEl.textContent = orig; }, 2000);
 }
 function shareRef(){
   hap([8,4,12]);
   var txt =
-    'Airtel Uganda — Référence ' + ref + '\n' +
+    'Airtel Uganda — Reference ' + ref + '\n' +
     'Plan: ' + (forfait.name || '—') + '\n' +
     'Amount: ' + (forfait.price || '—') + '\n' +
     'Phone: ' + phoneFmt;
   if (navigator.share){
-    navigator.share({ title: 'Airtel Uganda — Référence', text: txt }).catch(function(){});
+    navigator.share({ title: 'Airtel Uganda — Reference', text: txt }).catch(function(){});
     return;
   }
   if (navigator.clipboard){
     navigator.clipboard.writeText(txt).then(function(){
       var b = document.getElementById('shareBtn');
       var original = b.innerHTML;
-      b.innerHTML = '✓ Référence copiée';
+      b.innerHTML = '✓ Reference copied';
       setTimeout(function(){ b.innerHTML = original; }, 1800);
     }).catch(function(){});
   }
