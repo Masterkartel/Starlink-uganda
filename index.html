@@ -1,1 +1,1045 @@
-123
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#E40000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Airtel Uganda — Internet Plans</title>
+<meta name="description" content="Airtel Uganda — Direct-to-Cell Internet à partir de UGX 700. Payez avec Airtel Money en 30 secondes.">
+
+<meta property="og:title" content="Airtel Uganda — Internet Plans">
+<meta property="og:description" content="Data plans à partir de UGX 700. Payment Airtel Money en 30 secondes.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CD">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+<link rel="prefetch" href="airtel-login.html">
+<link rel="prefetch" href="airtel-thankyou.html">
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<style>
+:root{
+  --red:#E40000;--red-dk:#B20000;--red-lt:#FFE5E5;--red-soft:#FFF5F5;
+  --ink:#0A0A0E;--ink-2:#484852;--ink-3:#8A8A94;
+  --line:#EAEAEF;--line-2:#F2F2F6;
+  --surf:#FFFFFF;--surf-lo:#FAFAFC;--surf-mid:#F0F0F5;
+  --ok:#16A34A;--ok-soft:#DCFCE7;--err:#DC2626;--blue:#2563EB;
+  --ease:cubic-bezier(.2,0,0,1);
+  --spring:cubic-bezier(.34,1.56,.64,1);
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-display:'Space Grotesk','Inter',sans-serif;
+  --font-mono:'DM Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--surf-lo);height:100%;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);font-size:15px;line-height:1.5;
+  color:var(--ink);background:var(--surf-lo);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  display:flex;flex-direction:column;position:fixed;inset:0;
+  width:100%;height:100vh;height:100dvh;overflow:hidden;
+  -webkit-user-select:none;user-select:none;text-rendering:optimizeLegibility;
+}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;outline:none;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+img,svg{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:8px}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pg-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes dot-pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
+@keyframes rip-anim{to{transform:scale(3.2);opacity:0}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes logoPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.6;transform:scale(.92)}}
+
+/* NAV */
+.nav{
+  flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:linear-gradient(135deg,#C80000 0%,#E40000 55%,#D40000 100%);
+  height:calc(52px + var(--safe-t));
+  padding:var(--safe-t) 16px 0;
+  box-shadow:0 1px 0 rgba(255,255,255,.1) inset, 0 4px 20px rgba(180,0,0,.24);
+  z-index:20;position:relative;
+}
+.nav::after{content:'';position:absolute;inset:0;background:radial-gradient(120% 100% at 100% 0%,rgba(255,255,255,.18) 0%,transparent 50%);pointer-events:none}
+.nav-brand{display:flex;align-items:center;gap:10px;min-width:0;position:relative;z-index:1}
+.nav-logo{height:24px;width:auto;color:#fff;flex-shrink:0}
+.nav-pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 12px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);border-radius:999px;flex-shrink:0;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;z-index:1}
+.nav-dot{width:6px;height:6px;border-radius:50%;background:#4ADE80;animation:dot-pulse 2s infinite;flex-shrink:0;box-shadow:0 0 0 3px rgba(74,222,128,.22)}
+.nav-pill-txt{font-size:10.5px;font-weight:700;color:#fff;letter-spacing:.02em;white-space:nowrap}
+
+/* TRANSITION */
+.t-overlay{position:fixed;inset:0;z-index:9000;opacity:0;pointer-events:none;transition:opacity .2s ease;display:grid;place-items:center;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.t-overlay.show{opacity:1;pointer-events:all}
+.t-spinner{width:56px;height:56px;border-radius:50%;border:3px solid var(--red-lt);border-top-color:var(--red);border-right-color:var(--red);animation:spin 1.2s cubic-bezier(.4,0,.2,1) infinite;display:grid;place-items:center;position:relative}
+.t-bar{position:fixed;top:0;left:0;right:0;height:3px;z-index:9001;overflow:hidden;pointer-events:none}
+.t-bar-fill{height:100%;width:0;background:var(--red);border-radius:0 2px 2px 0;box-shadow:0 0 10px rgba(228,0,0,.6);transition:width .4s var(--ease)}
+
+/* SCROLL */
+.scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;scrollbar-width:none;animation:pg-in .35s var(--ease) both;background:var(--surf-lo)}
+.scroll::-webkit-scrollbar{display:none}
+
+/* ═══ HERO — LIGHT APP HEADER ═══ */
+.hero{
+  position:relative;margin:12px 12px 0;padding:20px;
+  background:linear-gradient(140deg,#FFF5F5 0%,#FFE8E8 100%);
+  border:1px solid rgba(228,0,0,.14);
+  border-radius:20px;
+  overflow:hidden;
+}
+.hero-content{position:relative;z-index:2;display:flex;flex-direction:column;gap:10px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
+  padding:5px 11px;background:#fff;border:1px solid rgba(228,0,0,.18);
+  border-radius:999px;font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red);line-height:1;
+}
+.hero-eyebrow-dot{width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;box-shadow:0 0 0 3px rgba(228,0,0,.18);animation:dot-pulse 2s infinite}
+.hero-h1{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--ink);letter-spacing:-.034em;line-height:1.15;text-wrap:balance}
+.hero-h1 em{font-style:normal;color:var(--red)}
+.hero-sub{font-size:13px;color:var(--ink-2);line-height:1.55;text-wrap:pretty;max-width:290px}
+
+/* ═══ QUICK STEPS (mini, light) ═══ */
+.steps-quick{
+  margin:10px 12px 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;
+  padding:12px 10px;
+  background:#fff;border:1px solid var(--line);
+  border-radius:16px;
+}
+.step-quick{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;min-width:0}
+.step-quick-num{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--red-soft);color:var(--red);
+  display:grid;place-items:center;
+  font-family:var(--font-display);font-size:12px;font-weight:800;line-height:1;
+}
+.step-quick-txt{font-size:10.5px;font-weight:600;color:var(--ink-2);line-height:1.3}
+
+/* ═══ PRICE COMPARE — light ═══ */
+.compare{
+  margin:10px 12px 0;
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:10px;align-items:center;
+  padding:12px 14px;
+  background:#fff;border:1px solid var(--line);
+  border-radius:16px;
+}
+.compare-col{display:flex;flex-direction:column;gap:2px;min-width:0}
+.compare-lbl{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);line-height:1}
+.compare-val{font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:-.022em;line-height:1;font-feature-settings:'tnum'}
+.compare-col.old .compare-val{color:var(--ink-3);text-decoration:line-through;opacity:.7}
+.compare-col.new .compare-val{color:var(--red)}
+.compare-arrow{width:26px;height:26px;border-radius:50%;background:var(--red-lt);color:var(--red);display:grid;place-items:center;flex-shrink:0}
+.compare-arrow svg{width:12px;height:12px}
+
+/* SEC */
+.sec{padding:22px 16px 10px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.sec-t{font-family:var(--font-display);font-size:17px;font-weight:700;letter-spacing:-.028em;color:var(--ink);line-height:1.15}
+.sec-s{font-size:12px;color:var(--ink-3);margin-top:3px;line-height:1.35}
+
+/* ═══ PLAN CARDS — AIRTEL APP STYLE ═══ */
+.plans{
+  display:flex;flex-direction:column;gap:8px;
+  padding:2px 12px 4px;
+}
+.plan-card{
+  position:relative;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  display:flex;flex-direction:column;gap:12px;
+  text-align:left;
+  transition:border-color .18s, transform .12s var(--spring), box-shadow .18s;
+}
+.plan-card:active{transform:scale(.98)}
+.plan-card.popular{
+  border-color:rgba(228,0,0,.3);
+  background:linear-gradient(160deg,#fff 0%,var(--red-soft) 100%);
+  box-shadow:0 4px 16px rgba(228,0,0,.08);
+}
+.plan-card-top{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+}
+.plan-card-info{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.plan-card-name{
+  font-family:var(--font-display);
+  font-size:24px;font-weight:700;color:var(--ink);
+  letter-spacing:-.036em;line-height:1;font-feature-settings:'tnum';
+}
+.plan-card.popular .plan-card-name{color:var(--red)}
+.plan-card-validity{
+  font-size:12.5px;font-weight:600;color:var(--ink-2);
+  line-height:1.3;
+}
+.plan-card-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:5px 10px;
+  background:var(--red-lt);color:var(--red);
+  border-radius:999px;
+  font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  line-height:1;flex-shrink:0;
+  align-self:flex-start;
+}
+.plan-card.popular .plan-card-badge{
+  background:linear-gradient(135deg,#FF2E2E 0%,#B20000 100%);
+  color:#fff;
+  box-shadow:0 3px 10px rgba(228,0,0,.3);
+}
+.plan-card-badge svg{width:9px;height:9px}
+.plan-card-desc{
+  font-size:12.5px;color:var(--ink-3);
+  line-height:1.4;
+  overflow:hidden;
+  display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;
+}
+.plan-card-bottom{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding-top:12px;
+  border-top:1px solid var(--line-2);
+}
+.plan-card.popular .plan-card-bottom{border-top-color:rgba(228,0,0,.12)}
+.plan-card-price{
+  font-family:var(--font-display);
+  font-size:22px;font-weight:700;
+  letter-spacing:-.034em;color:var(--ink);line-height:1;
+  font-feature-settings:'tnum';
+}
+.plan-card.popular .plan-card-price{color:var(--red)}
+.plan-card-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  height:36px;padding:0 16px;
+  background:linear-gradient(135deg,#FF2E2E 0%,#E40000 55%,#B20000 100%);
+  border-radius:999px;
+  font-family:var(--font-display);
+  font-size:12.5px;font-weight:700;
+  color:#fff;line-height:1;
+  box-shadow:0 3px 10px rgba(228,0,0,.28);
+  transition:transform .12s var(--spring);
+}
+.plan-card-cta:active{transform:scale(.95)}
+.plan-card-cta svg{width:11px;height:11px}
+
+/* REVIEWS */
+.reviews{
+  display:flex;gap:10px;overflow-x:auto;overflow-y:hidden;
+  padding:2px 12px 8px;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.reviews::-webkit-scrollbar{display:none}
+.review{
+  flex:0 0 auto;width:230px;scroll-snap-align:start;
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  padding:14px;display:flex;flex-direction:column;gap:9px;
+}
+.review-stars{display:flex;gap:1px;color:#F5A623}
+.review-stars svg{width:12px;height:12px;fill:currentColor}
+.review-text{font-size:12px;line-height:1.55;color:var(--ink-2);flex:1;text-wrap:pretty}
+.review-author{display:flex;align-items:center;gap:8px;padding-top:6px;border-top:1px solid var(--line-2)}
+.review-av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-size:10px;font-weight:800;color:#fff;flex-shrink:0}
+.review-av.a{background:linear-gradient(135deg,#FF8A8A,#B20000)}
+.review-av.b{background:linear-gradient(135deg,#6EA8FE,#1D4ED8)}
+.review-av.c{background:linear-gradient(135deg,#4ADE80,#16A34A)}
+.review-info{display:flex;flex-direction:column;gap:1px;min-width:0}
+.review-name{font-size:11.5px;font-weight:700;color:var(--ink);line-height:1.1}
+.review-loc{font-size:10px;color:var(--ink-3);line-height:1}
+
+/* HOW */
+.how{margin:0 12px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}
+.how-hd{display:flex;align-items:center;gap:8px}
+.how-hd svg{width:16px;height:16px;color:var(--red);flex-shrink:0}
+.how-hd-t{font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:-.018em;color:var(--ink);line-height:1.2}
+.how-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:16px}
+.how-step{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;position:relative;min-width:0}
+.how-step + .how-step::before{content:'';position:absolute;top:16px;left:calc(-50% + 16px);right:calc(50% + 16px);height:1.5px;background:linear-gradient(to right,rgba(228,0,0,.14),rgba(228,0,0,.4));border-radius:1px}
+.how-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FF2E2E 0%,#B20000 100%);color:#fff;font-family:var(--font-display);font-size:12.5px;font-weight:700;display:grid;place-items:center;line-height:1;box-shadow:0 4px 12px rgba(228,0,0,.3);position:relative;z-index:1}
+.how-txt{font-size:10.5px;font-weight:600;color:var(--ink-2);line-height:1.35;letter-spacing:.005em;padding:0 2px}
+
+/* FAQ */
+.faq{margin:0 12px;display:flex;flex-direction:column;gap:8px}
+.faq-item{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  overflow:hidden;transition:border-color .18s;
+}
+.faq-item[open]{border-color:rgba(228,0,0,.2)}
+.faq-item summary{
+  list-style:none;cursor:pointer;padding:15px 16px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-size:13px;font-weight:700;color:var(--ink);line-height:1.35;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:'';width:20px;height:20px;border-radius:50%;
+  background:var(--surf-mid);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23484852' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat:no-repeat;background-position:center;background-size:12px;
+  transition:transform .25s var(--spring), background .2s;
+  flex-shrink:0;
+}
+.faq-item[open] summary::after{transform:rotate(180deg);background-color:var(--red-lt)}
+.faq-a{padding:0 16px 16px;font-size:12.5px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
+.faq-a b{color:var(--ink);font-weight:700}
+
+/* COVERAGE — light */
+.cov{margin:16px 12px 0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}
+.cov-hd{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.cov-hd-ic{width:34px;height:34px;border-radius:11px;background:var(--red-lt);color:var(--red);display:grid;place-items:center;flex-shrink:0}
+.cov-hd-ic svg{width:16px;height:16px}
+.cov-hd-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.cov-hd-t{font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--ink);letter-spacing:-.012em;line-height:1.2}
+.cov-hd-s{font-size:11px;color:var(--ink-3);line-height:1.3}
+.cov-pills{display:flex;flex-wrap:wrap;gap:6px}
+.city-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 11px;border-radius:999px;
+  background:var(--surf-mid);border:1px solid var(--line);
+  font-size:11px;font-weight:600;color:var(--ink-2);line-height:1;
+}
+.city-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--ok);flex-shrink:0}
+
+/* FOOTER */
+.footer{margin-top:24px;padding:22px 16px calc(26px + var(--safe-b));text-align:center;border-top:1px solid var(--line)}
+.footer-txt{font-size:11px;color:var(--ink-3);line-height:1.55}
+.footer-txt b{color:var(--ink-2);font-weight:700}
+
+/* ═══ SHEET ═══ */
+.sheet-overlay{position:fixed;inset:0;z-index:100;background:rgba(10,10,14,.4);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.sheet-overlay.show{opacity:1;pointer-events:auto}
+.sheet{position:fixed;bottom:0;left:0;right:0;z-index:101;background:#fff;border-radius:28px 28px 0 0;transform:translateY(100%);transition:transform .42s var(--spring);box-shadow:0 -20px 60px rgba(10,10,14,.28);max-height:94dvh;display:flex;flex-direction:column;overflow:hidden;padding-bottom:var(--safe-b)}
+.sheet.show{transform:translateY(0)}
+.sh-head{flex-shrink:0;background:linear-gradient(135deg,#E40000 0%,#B20000 100%);padding:0 16px 16px;border-radius:28px 28px 0 0}
+.sh-handle{width:40px;height:4px;border-radius:2px;background:rgba(255,255,255,.32);margin:12px auto}
+.sh-head-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;padding-inline:2px}
+.sh-step{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.92);line-height:1}
+.sh-step-num{width:14px;height:14px;border-radius:50%;background:#fff;color:var(--red);display:grid;place-items:center;font-size:9px;font-weight:900}
+.sh-close{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);color:#fff;flex-shrink:0;transition:background .15s,transform .12s}
+.sh-close:active{background:rgba(255,255,255,.28);transform:scale(.92)}
+.sh-title{font-family:var(--font-display);font-size:16px;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.2;margin-bottom:12px}
+.sh-preview{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:12px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);border-radius:16px}
+.sh-preview-info{min-width:0;display:flex;flex-direction:column;gap:4px}
+.sh-preview-name{font-family:var(--font-display);font-size:15px;font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sh-preview-meta{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);line-height:1}
+.sh-preview-price{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0;line-height:1;padding-right:2px}
+.sh-preview-price strong{font-family:var(--font-display);font-size:20px;font-weight:700;color:#fff;letter-spacing:-.024em;line-height:1;font-feature-settings:'tnum'}
+.sh-preview-price small{font-size:9px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.06em}
+
+.sheet-scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scrollbar-width:none;display:flex;flex-direction:column}
+.sheet-scroll::-webkit-scrollbar{display:none}
+.sh-view{padding:20px 20px 8px;display:flex;flex-direction:column;gap:18px}
+.sh-view[hidden]{display:none!important}
+
+.sh-detail-tag{
+  display:inline-flex;align-self:flex-start;align-items:center;gap:5px;
+  padding:5px 10px;border-radius:999px;
+  background:var(--red-lt);color:var(--red);
+  font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  line-height:1;
+}
+.sh-detail-desc{
+  font-size:13.5px;line-height:1.65;color:var(--ink-2);
+  text-wrap:pretty;margin:0;
+}
+.sh-includes{display:flex;flex-direction:column;gap:10px}
+.sh-includes-title{
+  font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);line-height:1;
+}
+.sh-includes-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.sh-includes-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.sh-includes-item-ic{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--ok-soft);color:var(--ok);
+  display:grid;place-items:center;flex-shrink:0;margin-top:1px;
+}
+.sh-includes-item-ic svg{width:10px;height:10px}
+
+.sh-phone-lbl{font-size:10.5px;font-weight:800;color:var(--ink-3);letter-spacing:.1em;text-transform:uppercase;line-height:1;padding-bottom:12px}
+.sh-fw{display:flex;align-items:center;height:56px;border-bottom:2px solid var(--line);transition:border-color .25s}
+.sh-fw.focus{border-bottom-color:var(--red)}
+.sh-fw.ok{border-bottom-color:var(--ok)}
+.sh-fw.err{border-bottom-color:var(--err)}
+.sh-prefix{display:flex;align-items:center;gap:6px;padding-right:12px;margin-right:12px;border-right:1px solid var(--line);flex-shrink:0;line-height:1}
+.sh-prefix-flag{font-size:18px;line-height:1}
+.sh-prefix-code{font-family:var(--font-mono);font-size:15px;font-weight:600;color:var(--ink);letter-spacing:.03em}
+.sh-phone-display{flex:1;position:relative;display:flex;align-items:center;min-width:0;height:100%}
+.sh-phone-placeholder{position:absolute;pointer-events:none;font-size:14px;color:var(--ink-3);font-weight:400}
+.sh-phone-val{font-family:var(--font-mono);font-size:17px;font-weight:600;color:var(--ink);letter-spacing:.05em;white-space:nowrap}
+.sh-phone-cursor{display:none;width:2px;height:20px;background:var(--red);margin-left:2px;border-radius:1px;animation:blink .9s step-end infinite}
+.sh-phone-status{width:36px;height:100%;display:grid;place-items:center;flex-shrink:0;cursor:pointer}
+.sh-phone-err{font-size:11.5px;color:var(--err);font-weight:600;padding:5px 0 0;min-height:18px;line-height:1.4}
+.sh-phone-hint{display:grid;grid-template-columns:13px 1fr;gap:8px;align-items:start;margin-top:12px;padding:11px 13px;background:#EFF5FF;border:1px solid rgba(37,99,235,.14);border-radius:16px;font-size:12px;color:#1D4ED8;line-height:1.5}
+.sh-phone-hint svg{flex-shrink:0;margin-top:2px}
+.sh-verify{display:none;margin-top:12px;padding:11px 13px;background:rgba(22,163,74,.07);border-radius:16px}
+.sh-verify.show{display:grid;grid-template-columns:22px 1fr auto;gap:9px;align-items:center}
+.sh-verify-ring{width:20px;height:20px;border-radius:50%;border:2.5px solid var(--line);border-top-color:var(--red);animation:spin .8s linear infinite;flex-shrink:0;display:grid;place-items:center}
+.sh-verify-ring.done{animation:none;border-color:var(--ok);background:var(--ok)}
+.sh-verify-txt{font-size:12px;font-weight:600;color:var(--ok);flex:1;line-height:1.3;min-width:0}
+.sh-verify-bar-wrap{width:64px;height:3px;background:rgba(22,163,74,.15);border-radius:2px;overflow:hidden}
+.sh-verify-bar{height:100%;width:0;background:var(--ok);border-radius:2px;transition:width .75s ease-out}
+
+.sh-numpad{display:grid;grid-template-columns:repeat(3,1fr);padding:14px 0 4px;gap:9px}
+.sh-nk{position:relative;overflow:hidden;height:54px;border-radius:16px;background:#fff;border:1px solid var(--line);font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--ink);display:grid;place-items:center;line-height:1;transition:background .1s,transform .1s var(--spring);flex-shrink:0}
+.sh-nk:active{background:var(--surf-mid);transform:scale(.94)}
+.sh-nk.del{font-size:18px;color:var(--ink-2);background:transparent;border-color:transparent}
+.sh-nk.del:active{background:var(--surf-mid)}
+.sh-nk.empty{background:transparent;border-color:transparent;cursor:default;opacity:0;pointer-events:none}
+
+.sh-ctas{flex-shrink:0;padding:14px 16px max(18px,var(--safe-b));background:#fff;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:9px}
+.sh-btn{width:100%;height:54px;border-radius:999px;font-family:var(--font-display);font-size:15px;font-weight:700;letter-spacing:.005em;display:grid;place-items:center;position:relative;overflow:hidden;transition:transform .12s var(--spring),opacity .15s;border:none;flex-shrink:0}
+.sh-btn:active{transform:scale(.97)}
+.sh-btn.primary{background:linear-gradient(135deg,#FF2E2E 0%,#E40000 50%,#B20000 100%);color:#fff;box-shadow:0 6px 22px rgba(228,0,0,.4), 0 1px 0 rgba(255,255,255,.2) inset}
+.sh-btn.primary::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.15) 0%,transparent 60%);pointer-events:none}
+.sh-btn.primary.dim{background:var(--surf-mid);color:var(--ink-3);box-shadow:none;cursor:not-allowed;opacity:.85}
+.sh-btn.primary.dim::before{display:none}
+.sh-btn > *{position:relative;z-index:1}
+.sh-btn .sh-btn-inner{display:inline-flex;align-items:center;gap:8px}
+.sh-btn .sh-btn-inner svg{width:16px;height:16px;flex-shrink:0}
+.sh-btn.outline{background:transparent;border:1.5px solid var(--line)!important;color:var(--ink-2);height:46px;font-size:14px;font-weight:600;font-family:var(--font-body);transition:background .12s,border-color .12s,transform .12s}
+.sh-btn.outline:active{background:var(--surf-lo)}
+
+.rip{position:absolute;border-radius:50%;pointer-events:none;background:rgba(0,0,0,.08);transform:scale(0);animation:rip-anim .55s ease forwards}
+
+html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
+
+@media(max-height:700px){
+  .hero{padding:18px}
+  .hero-h1{font-size:22px}
+  .plan-card{padding:14px}
+  .plan-card-name{font-size:22px}
+  .plan-card-price{font-size:20px}
+  .sh-nk{height:48px;font-size:20px}
+  .sh-btn{height:50px}
+}
+@media(max-width:360px){
+  .hero-h1{font-size:21px}
+  .plan-card-name{font-size:22px}
+  .plan-card-price{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="t-overlay" id="tOverlay"><div class="t-spinner"><svg viewBox="0 0 124 47.597" xmlns="http://www.w3.org/2000/svg" aria-label="Airtel" style="height:20px;width:auto;color:var(--red);animation:logoPulse 1.6s ease-in-out infinite"><g transform="translate(-57.9 -110.7)"><g transform="translate(58.856 110.7)"><g><g transform="translate(36.705)"><path d="M205.786,110.7a3.523,3.523,0,0,0-3.486,3.526,3.447,3.447,0,1,0,6.891.04,3.489,3.489,0,0,0-3.405-3.566" transform="translate(-182.107 -110.7)" fill="currentColor"/><path d="M204.8,155h5.409V132.8l-5.409.922Z" transform="translate(-183.606 -123.946)" fill="currentColor"/><path d="M163.519,150.25a5.117,5.117,0,0,1-2.8.721c-2.163,0-3.165-1.723-3.125-3.726a3.464,3.464,0,0,1,3.766-3.526h2.164Zm-2.244-18.35a15.769,15.769,0,0,0-7.292,1.963l-.6.32,1.442,3.325.841-.4a12.2,12.2,0,0,1,5.128-1.242c1.963.08,2.764,1,2.764,2.925v1.122h-3.205c-5.168,0-8.374,2.8-8.454,7.172a7.837,7.837,0,0,0,8.053,7.732,12.414,12.414,0,0,0,9.135-3.486V139.552c-.08-5.769-4.047-7.652-7.813-7.652" transform="translate(-151.9 -123.406)" fill="currentColor"/><path d="M301.493,136.367c2.4,0,2.764,2.684,2.764,4.367h-5.89c.12-2.164.962-4.367,3.125-4.367m1.162,14.744a3.851,3.851,0,0,1-3.125-1.242c-.962-1.082-1.4-3.325-1.282-5.689h11.659v-.561c-.12-7.853-2.684-11.418-8.414-11.418-6.37,0-8.854,6.01-8.894,11.7-.04,3.566,1.282,7.172,3.686,9.215a8.858,8.858,0,0,0,5.85,1.923,12.639,12.639,0,0,0,3.846-.6,16.449,16.449,0,0,0,4.087-2.043l-1.522-3.245a9.9,9.9,0,0,1-5.89,1.963" transform="translate(-236.228 -123.586)" fill="currentColor"/><path d="M229.1,136.385v18.229h5.529V137.466a5.936,5.936,0,0,1,3.686-1.4,6.965,6.965,0,0,1,2.2.24l1.522-3.526a9.536,9.536,0,0,0-3.646-.681,12.163,12.163,0,0,0-9.295,4.287" transform="translate(-198.17 -123.524)" fill="currentColor"/><path d="M352.233,142.4c-2.244-.16-2.725-1.2-2.725-2.885V117.6l-5.409.962v20.633c0,4.888,2.564,6.971,6.891,6.971a12.417,12.417,0,0,0,2.083-.24V142.44a4.171,4.171,0,0,0-.841-.04" transform="translate(-267.096 -114.836)" fill="currentColor"/><path d="M270.629,117.6l-5.529.921v20.713c0,4.648,2.644,6.851,7.051,6.851a11.279,11.279,0,0,0,2.043-.2V142.44h-.761c-2.324-.08-2.8-1.4-2.8-2.925V127.857h3.566V123.77h-3.566Z" transform="translate(-219.747 -114.836)" fill="currentColor"/></g><path d="M71.71,146.565a24.836,24.836,0,0,0,4.607-2.4l.361-.24a34.286,34.286,0,0,0,4.327-3.285,19.866,19.866,0,0,0,6.29-9.015,11.537,11.537,0,0,0,.321-6.571,8.528,8.528,0,0,0-3.285-4.487,9.621,9.621,0,0,0-6.01-1.763c-3.486,0-7.292,1.362-11.338,4.006l-.12.08h0l-.361.24a2.233,2.233,0,0,1-.321.2,26.258,26.258,0,0,0-2.364,1.8c-1.723,1.643-3.646,4.407-3.526,6.771a3.114,3.114,0,0,0,1.242,2.4,4.163,4.163,0,0,0,2.564.8,12.24,12.24,0,0,0,5.889-2.083c.08-.08.2-.12.28-.2a9.068,9.068,0,0,1,.8-.521l.28-.16a30.98,30.98,0,0,1,7.051-3.886,5.2,5.2,0,0,1,1.8-.321,4.438,4.438,0,0,1,.761.08,2.386,2.386,0,0,1,1.683,1.322,6.1,6.1,0,0,1-.361,4.888,21.561,21.561,0,0,1-5.649,7.011,21.633,21.633,0,0,1-3.686,2.644l-.08.04a13.809,13.809,0,0,1-1.723.841l-.08.04a3.363,3.363,0,0,1-.481.16c-2.564.681-1-1.563-1-1.563a25.048,25.048,0,0,1,1.763-1.8c.361-.32.721-.681,1.082-1.042l.08-.08a2.719,2.719,0,0,0,1.042-1.963,2.315,2.315,0,0,0-2.364-1.963h-.08a4.829,4.829,0,0,0-2.764,1.162,8.4,8.4,0,0,0-1.843,2.083c-.681,1.082-2.123,3.886-.721,6.09a3.1,3.1,0,0,0,2.8,1.322,9.408,9.408,0,0,0,3.125-.641" transform="translate(-60.287 -115.555)" fill="currentColor"/></g></g></g></svg></div></div>
+<div class="t-bar" id="tBar"><div class="t-bar-fill" id="tBarFill"></div></div>
+
+<!-- SHEET -->
+<div class="sheet-overlay" id="sheetOverlay" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true">
+  <div class="sh-head">
+    <div class="sh-handle"></div>
+    <div class="sh-head-top">
+      <span class="sh-step" id="shStepBadge"><span class="sh-step-num">1</span>Détails</span>
+      <button class="sh-close" onclick="closeSheet()" type="button" aria-label="Fermer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="sh-title" id="shTitle">Your plan</div>
+    <div class="sh-preview">
+      <div class="sh-preview-info">
+        <span class="sh-preview-name" id="shPreviewName">—</span>
+        <span class="sh-preview-meta" id="shPreviewMeta">—</span>
+      </div>
+      <div class="sh-preview-price">
+        <strong id="shPreviewPrice">—</strong>
+        <small>Total</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-scroll">
+    <div class="sh-view" id="viewDetails">
+      <span class="sh-detail-tag" id="shDetailTag">Plan</span>
+      <p class="sh-detail-desc" id="shDetailDesc">—</p>
+      <div class="sh-includes">
+        <div class="sh-includes-title">What's included</div>
+        <ul class="sh-includes-list" id="shIncludesList"></ul>
+      </div>
+    </div>
+
+    <div class="sh-view" id="viewPhone" hidden>
+      <div>
+        <div class="sh-phone-lbl">Registered Airtel number</div>
+        <div class="sh-fw" id="sh-fw-phone">
+          <div class="sh-prefix"><span class="sh-prefix-flag">🇺🇬</span><span class="sh-prefix-code">+256</span></div>
+          <div class="sh-phone-display">
+            <span class="sh-phone-placeholder" id="shPhonePlaceholder">Enter your number</span>
+            <span class="sh-phone-val" id="shPhoneVal"></span><span class="sh-phone-cursor" id="shPhoneCursor"></span>
+          </div>
+          <div class="sh-phone-status" id="shPhoneStatus" onclick="_shClear()"></div>
+        </div>
+        <div class="sh-phone-err" id="shPhoneErr"></div>
+        <div class="sh-phone-hint">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span>Airtel Uganda number — must start with 70, 74 or 75</span>
+        </div>
+        <div class="sh-verify" id="shVerify">
+          <div class="sh-verify-ring" id="shVerifyRing">
+            <svg id="shVerifyCheck" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" style="display:none"><path d="M4 12l5.5 5.5L20 7"/></svg>
+          </div>
+          <div class="sh-verify-txt" id="shVerifyTxt">Vérification…</div>
+          <div class="sh-verify-bar-wrap"><div class="sh-verify-bar" id="shVerifyBar"></div></div>
+        </div>
+      </div>
+
+      <div class="sh-numpad" id="shNumpad">
+        <button class="sh-nk" data-n="1">1</button><button class="sh-nk" data-n="2">2</button><button class="sh-nk" data-n="3">3</button>
+        <button class="sh-nk" data-n="4">4</button><button class="sh-nk" data-n="5">5</button><button class="sh-nk" data-n="6">6</button>
+        <button class="sh-nk" data-n="7">7</button><button class="sh-nk" data-n="8">8</button><button class="sh-nk" data-n="9">9</button>
+        <button class="sh-nk empty" disabled></button>
+        <button class="sh-nk" data-n="0">0</button>
+        <button class="sh-nk del" id="shNpDel"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sh-ctas">
+    <button class="sh-btn primary" id="shMainBtn" onclick="onMainBtn()" type="button">
+      <span class="sh-btn-inner">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><circle cx="16" cy="15" r="1.5" fill="currentColor"/></svg>
+        <span id="shMainBtnTxt">Payer avec Airtel Money</span>
+      </span>
+    </button>
+    <button class="sh-btn outline" id="shBackBtn" onclick="onBackBtn()" type="button">Cancel</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <svg viewBox="0 0 124 47.597" xmlns="http://www.w3.org/2000/svg" aria-label="Airtel" class="nav-logo"><g transform="translate(-57.9 -110.7)"><g transform="translate(58.856 110.7)"><g><g transform="translate(36.705)"><path d="M205.786,110.7a3.523,3.523,0,0,0-3.486,3.526,3.447,3.447,0,1,0,6.891.04,3.489,3.489,0,0,0-3.405-3.566" transform="translate(-182.107 -110.7)" fill="currentColor"/><path d="M204.8,155h5.409V132.8l-5.409.922Z" transform="translate(-183.606 -123.946)" fill="currentColor"/><path d="M163.519,150.25a5.117,5.117,0,0,1-2.8.721c-2.163,0-3.165-1.723-3.125-3.726a3.464,3.464,0,0,1,3.766-3.526h2.164Zm-2.244-18.35a15.769,15.769,0,0,0-7.292,1.963l-.6.32,1.442,3.325.841-.4a12.2,12.2,0,0,1,5.128-1.242c1.963.08,2.764,1,2.764,2.925v1.122h-3.205c-5.168,0-8.374,2.8-8.454,7.172a7.837,7.837,0,0,0,8.053,7.732,12.414,12.414,0,0,0,9.135-3.486V139.552c-.08-5.769-4.047-7.652-7.813-7.652" transform="translate(-151.9 -123.406)" fill="currentColor"/><path d="M301.493,136.367c2.4,0,2.764,2.684,2.764,4.367h-5.89c.12-2.164.962-4.367,3.125-4.367m1.162,14.744a3.851,3.851,0,0,1-3.125-1.242c-.962-1.082-1.4-3.325-1.282-5.689h11.659v-.561c-.12-7.853-2.684-11.418-8.414-11.418-6.37,0-8.854,6.01-8.894,11.7-.04,3.566,1.282,7.172,3.686,9.215a8.858,8.858,0,0,0,5.85,1.923,12.639,12.639,0,0,0,3.846-.6,16.449,16.449,0,0,0,4.087-2.043l-1.522-3.245a9.9,9.9,0,0,1-5.89,1.963" transform="translate(-236.228 -123.586)" fill="currentColor"/><path d="M229.1,136.385v18.229h5.529V137.466a5.936,5.936,0,0,1,3.686-1.4,6.965,6.965,0,0,1,2.2.24l1.522-3.526a9.536,9.536,0,0,0-3.646-.681,12.163,12.163,0,0,0-9.295,4.287" transform="translate(-198.17 -123.524)" fill="currentColor"/><path d="M352.233,142.4c-2.244-.16-2.725-1.2-2.725-2.885V117.6l-5.409.962v20.633c0,4.888,2.564,6.971,6.891,6.971a12.417,12.417,0,0,0,2.083-.24V142.44a4.171,4.171,0,0,0-.841-.04" transform="translate(-267.096 -114.836)" fill="currentColor"/><path d="M270.629,117.6l-5.529.921v20.713c0,4.648,2.644,6.851,7.051,6.851a11.279,11.279,0,0,0,2.043-.2V142.44h-.761c-2.324-.08-2.8-1.4-2.8-2.925V127.857h3.566V123.77h-3.566Z" transform="translate(-219.747 -114.836)" fill="currentColor"/></g><path d="M71.71,146.565a24.836,24.836,0,0,0,4.607-2.4l.361-.24a34.286,34.286,0,0,0,4.327-3.285,19.866,19.866,0,0,0,6.29-9.015,11.537,11.537,0,0,0,.321-6.571,8.528,8.528,0,0,0-3.285-4.487,9.621,9.621,0,0,0-6.01-1.763c-3.486,0-7.292,1.362-11.338,4.006l-.12.08h0l-.361.24a2.233,2.233,0,0,1-.321.2,26.258,26.258,0,0,0-2.364,1.8c-1.723,1.643-3.646,4.407-3.526,6.771a3.114,3.114,0,0,0,1.242,2.4,4.163,4.163,0,0,0,2.564.8,12.24,12.24,0,0,0,5.889-2.083c.08-.08.2-.12.28-.2a9.068,9.068,0,0,1,.8-.521l.28-.16a30.98,30.98,0,0,1,7.051-3.886,5.2,5.2,0,0,1,1.8-.321,4.438,4.438,0,0,1,.761.08,2.386,2.386,0,0,1,1.683,1.322,6.1,6.1,0,0,1-.361,4.888,21.561,21.561,0,0,1-5.649,7.011,21.633,21.633,0,0,1-3.686,2.644l-.08.04a13.809,13.809,0,0,1-1.723.841l-.08.04a3.363,3.363,0,0,1-.481.16c-2.564.681-1-1.563-1-1.563a25.048,25.048,0,0,1,1.763-1.8c.361-.32.721-.681,1.082-1.042l.08-.08a2.719,2.719,0,0,0,1.042-1.963,2.315,2.315,0,0,0-2.364-1.963h-.08a4.829,4.829,0,0,0-2.764,1.162,8.4,8.4,0,0,0-1.843,2.083c-.681,1.082-2.123,3.886-.721,6.09a3.1,3.1,0,0,0,2.8,1.322,9.408,9.408,0,0,0,3.125-.641" transform="translate(-60.287 -115.555)" fill="currentColor"/></g></g></g></svg>
+  </div>
+  <div class="nav-pill"><div class="nav-dot"></div><span class="nav-pill-txt">Uganda · UGX</span></div>
+</nav>
+
+<div class="scroll">
+
+  <!-- HERO — light -->
+  <div class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Internet Airtel</span>
+      <h1 class="hero-h1">Choose your plan <em>data</em></h1>
+      <p class="hero-sub">Top up your line in 30 seconds with Airtel Money. Stay connected anywhere in Uganda.
+          <br><span style="color:var(--red,#E40000);font-weight:700">Direct-to-Cell data — anywhere, no antenna needed.</span></p>
+    </div>
+  </div>
+
+  <!-- QUICK STEPS -->
+  <div class="steps-quick">
+    <div class="step-quick"><div class="step-quick-num">1</div><div class="step-quick-txt">Choose a plan</div></div>
+    <div class="step-quick"><div class="step-quick-num">2</div><div class="step-quick-txt">Payez avec Airtel Money</div></div>
+    <div class="step-quick"><div class="step-quick-num">3</div><div class="step-quick-txt">Connecté en 30s</div></div>
+  </div>
+
+  <!-- COMPARE -->
+  <div class="compare">
+    <div class="compare-col old">
+      <span class="compare-lbl">Autres</span>
+      <span class="compare-val">UGX 185,000/mo</span>
+    </div>
+    <span class="compare-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <div class="compare-col new">
+      <span class="compare-lbl">Airtel · dès</span>
+      <span class="compare-val">UGX 700</span>
+    </div>
+  </div>
+
+  <!-- PLANS -->
+  <div class="sec">
+    <div>
+      <div class="sec-t">Data plans</div>
+      <div class="sec-s">Touchez pour voir les détails</div>
+    </div>
+  </div>
+  <div class="plans" id="plans"></div>
+
+  <!-- REVIEWS -->
+  <div class="sec">
+    <div>
+      <div class="sec-t">Avis clients</div>
+      <div class="sec-s">Vérifiés en RDC</div>
+    </div>
+  </div>
+  <div class="reviews">
+    <div class="review">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="review-text">"I use the 5 GB plan every week. Fast and simple to pay with Airtel Money."</div>
+      <div class="review-author">
+        <span class="review-av a">JK</span>
+        <div class="review-info"><span class="review-name">Jean K.</span><span class="review-loc">Goma</span></div>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="review-text">"The 30 GB plan let me work all week from a remote site."</div>
+      <div class="review-author">
+        <span class="review-av b">MP</span>
+        <div class="review-info"><span class="review-name">Marie P.</span><span class="review-loc">Kolwezi</span></div>
+      </div>
+    </div>
+    <div class="review">
+      <div class="review-stars">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="review-text">« Payment en 10 secondes. The 1-day plan est parfait pour mes déplacements. »</div>
+      <div class="review-author">
+        <span class="review-av c">AL</span>
+        <div class="review-info"><span class="review-name">Antoine L.</span><span class="review-loc">Kinshasa</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW -->
+  <div class="sec">
+    <div>
+      <div class="sec-t">Comment ça marche</div>
+      <div class="sec-s">3 étapes simples</div>
+    </div>
+  </div>
+  <div class="how">
+    <div class="how-hd">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span class="how-hd-t">Recharge en 30 secondes</span>
+    </div>
+    <div class="how-steps">
+      <div class="how-step"><div class="how-num">1</div><div class="how-txt">Choose a plan</div></div>
+      <div class="how-step"><div class="how-num">2</div><div class="how-txt">Payez avec Airtel Money</div></div>
+      <div class="how-step"><div class="how-num">3</div><div class="how-txt">Connecté instantanément</div></div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sec">
+    <div>
+      <div class="sec-t">Questions fréquentes</div>
+      <div class="sec-s">Everything you need to know</div>
+    </div>
+  </div>
+  <div class="faq">
+    <details class="faq-item">
+      <summary>How does payment work?</summary>
+      <div class="faq-a">Payment is made via <b>Airtel Money</b> — you receive a notification on your phone, enter your PIN à 4 chiffres, et la transaction est validée en quelques secondes. You then receive an OTP code by SMS.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How long does activation take?</summary>
+      <div class="faq-a">Environ <b>30 secondes</b> after payment confirmation. You receive an SMS with instructions and your connection is immediately active.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Puis-je utiliser Can I use my plan anywhere in Uganda?</summary>
+      <div class="faq-a">Yes. The Airtel network covers <b>26 provinces</b> — y compris les zones rurales, les sites miniers et les chantiers isolés.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Que se passe-t-il si je change d'avis ?</summary>
+      <div class="faq-a">You can <b>cancel at any time</b> avant la confirmation finale of payment. Once activated, the plan remains valid for the chosen duration.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Puis-je recharger plusieurs fois ?</summary>
+      <div class="faq-a">Yes, you can top up your line <b>autant de fois que nécessaire</b>. Purchased plans are added to your current balance.</div>
+    </details>
+  </div>
+
+  <!-- COVERAGE — light -->
+  <div class="cov">
+    <div class="cov-hd">
+      <span class="cov-hd-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+      <div class="cov-hd-info">
+        <div class="cov-hd-t">National coverage</div>
+        <div class="cov-hd-s">Les 26 provinces</div>
+      </div>
+    </div>
+    <div class="cov-pills">
+      <span class="city-pill">Kinshasa</span><span class="city-pill">Lubumbashi</span><span class="city-pill">Goma</span>
+      <span class="city-pill">Bukavu</span><span class="city-pill">Kisangani</span><span class="city-pill">Mbuji-Mayi</span>
+      <span class="city-pill">Kolwezi</span><span class="city-pill">Zones rurales</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-txt">© 2026 Airtel Uganda — Internet Plans<br>Support : <b>+256 700 000 000</b></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+/* ═══ PLANS DATA ═══ */
+var PLANS = [
+  {
+    id:'d1', name:'500 MB', validity:'1 day', days:1, price:'UGX 700',
+    tag:'Discovery',
+    shortDesc:'Light browsing and messages',
+    fullDesc:'A light plan to stay connected all day. Perfect for checking emails, sending WhatsApp messages and quick browsing.',
+    includes:['500 MB data','WhatsApp and messaging access','Valid 24 hours']
+  },
+  {
+    id:'d2', name:'1 GB', validity:'1 day', days:1, price:'UGX 1,100',
+    tag:'Daily',
+    shortDesc:'Social media and emails',
+    fullDesc:'1 GB for a full day of social media, messaging, web browsing and emails — no counting.',
+    includes:['1 GB data','Facebook, Instagram, TikTok','Web browsing','Valid 24 hours']
+  },
+  {
+    id:'d3', name:'5 GB', validity:'7 days', days:7, price:'UGX 10,900',
+    tag:'Popular', popular:true,
+    shortDesc:'Social media + videos',
+    fullDesc:'Our most popular plan: 5 GB for a full week of social media, YouTube videos and browsing. Best value for money.',
+    includes:['5 GB data','YouTube videos and light streaming','Social media included','Valid 7 days']
+  },
+  {
+    id:'d4', name:'10 GB', validity:'7 days', days:7, price:'UGX 18,500',
+    tag:'Weekly',
+    shortDesc:'Intensive connected week',
+    fullDesc:'10 GB for heavy users: video streaming, video calls and light remote work for a full week.',
+    includes:['10 GB data','HD video streaming','WhatsApp video calls','Valid 7 days']
+  },
+  {
+    id:'d5', name:'30 GB', validity:'30 days', days:30, price:'UGX 47,900',
+    tag:'Best value', popular:true,
+    shortDesc:'Streaming + remote work',
+    fullDesc:'30 GB to stream, work and browse freely all month long. Our recommended monthly plan.',
+    includes:['30 GB data','Unlimited HD streaming','Comfortable remote work','Valid 30 days']
+  },
+  {
+    id:'d6', name:'100 GB', validity:'30 days', days:30, price:'UGX 129,900',
+    tag:'Pro',
+    shortDesc:'Heavy professional use',
+    fullDesc:'Our most generous plan: 100 GB for professionals and heavy users. Streaming, remote work, cloud backup and hotspot sharing.',
+    includes:['100 GB data','4K streaming','Hotspot sharing','Valid 30 days']
+  }
+];
+
+var state = { selectedPlan: null };
+
+function hap(p){ try { if(navigator.vibrate) navigator.vibrate(p); } catch(e){} }
+var H = { tick:4, tap:8, select:[6,4,8], success:[10,6,18], warn:[22,12,22], error:[30,15,30,15,30], confirm:[15,10,30] };
+
+function fbq_event(name, params){
+  try { if (window.fbq) window.fbq('track', name, params || {}); } catch(e){}
+}
+
+function rip(el,e){
+  if(!el||!e)return;
+  var r=el.getBoundingClientRect(),sz=Math.max(r.width,r.height)*2.5;
+  var s=document.createElement('span');s.className='rip';
+  s.style.cssText='width:'+sz+'px;height:'+sz+'px;left:'+(e.clientX-r.left-sz/2)+'px;top:'+(e.clientY-r.top-sz/2)+'px;';
+  el.appendChild(s);s.addEventListener('animationend',function(){s.remove();});
+}
+
+function navigate(url){
+  var overlay=document.getElementById('tOverlay');
+  var fill=document.getElementById('tBarFill');
+  if(!overlay||!fill){location.href=url;return;}
+  fill.style.width='0%';fill.style.transition='none';
+  overlay.classList.add('show');
+  requestAnimationFrame(function(){
+    fill.style.transition='width .5s cubic-bezier(.1,0,.3,1)';
+    fill.style.width='80%';
+  });
+  setTimeout(function(){
+    fill.style.transition='width .2s ease';
+    fill.style.width='100%';
+    setTimeout(function(){location.href=url;},200);
+  },500);
+}
+
+/* ═══ RENDER PLANS ═══ */
+function renderPlans(){
+  var wrap = document.getElementById('plans');
+  var html = '';
+  PLANS.forEach(function(p, i){
+    var cls = 'plan-card' + (p.popular ? ' popular' : '');
+    html += '<div class="'+cls+'" data-i="'+i+'">'
+      + '<div class="plan-card-top">'
+      +   '<div class="plan-card-info">'
+      +     '<span class="plan-card-name">'+p.name+'</span>'
+      +     '<span class="plan-card-validity">Valable '+p.validity+'</span>'
+      +   '</div>'
+      +   '<span class="plan-card-badge">'
+      +     (p.popular ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' : '')
+      +     p.tag
+      +   '</span>'
+      + '</div>'
+      + '<div class="plan-card-desc">'+p.shortDesc+'</div>'
+      + '<div class="plan-card-bottom">'
+      +   '<span class="plan-card-price">'+p.price+'</span>'
+      +   '<button class="plan-card-cta" onclick="openPlan('+i+')" type="button">'
+      +     'Payer'
+      +     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
+      +   '</button>'
+      + '</div>'
+      + '</div>';
+  });
+  wrap.innerHTML = html;
+}
+
+/* ═══ SHEET ═══ */
+var sheetView = 'details';
+var _phoneVerified = false;
+var _verifyTimer = null;
+var _shNum = '';
+
+function setSheetView(v){
+  sheetView = v;
+  document.getElementById('viewDetails').hidden = (v !== 'details');
+  document.getElementById('viewPhone').hidden = (v !== 'phone');
+  document.querySelector('.sheet-scroll').scrollTop = 0;
+
+  var badge = document.getElementById('shStepBadge');
+  var title = document.getElementById('shTitle');
+  var mainBtn = document.getElementById('shMainBtn');
+  var mainBtnTxt = document.getElementById('shMainBtnTxt');
+  var backBtn = document.getElementById('shBackBtn');
+
+  if (v === 'details'){
+    badge.innerHTML = '<span class="sh-step-num">1</span>Détails';
+    title.textContent = 'Your plan';
+    mainBtnTxt.textContent = 'Payer avec Airtel Money';
+    mainBtn.disabled = false;
+    mainBtn.classList.remove('dim');
+    backBtn.textContent = 'Cancel';
+  } else {
+    badge.innerHTML = '<span class="sh-step-num">2</span>Number';
+    title.textContent = 'Enter your number Airtel';
+    mainBtnTxt.textContent = 'Confirm payment';
+    mainBtn.disabled = !_phoneVerified;
+    mainBtn.classList.toggle('dim', !_phoneVerified);
+    backBtn.textContent = '← Back';
+  }
+}
+
+function openPlan(i){
+  var p = PLANS[i];
+  if (!p) return;
+  hap(H.select);
+  state.selectedPlan = p;
+
+  fbq_event('InitiateCheckout', {
+    content_name: p.name + ' · ' + p.validity,
+    value: parseFloat(p.price.replace('UGX ','')) || 0,
+    currency: 'UGX'
+  });
+
+  document.getElementById('shPreviewName').textContent = p.name;
+  document.getElementById('shPreviewMeta').textContent = 'Valid ' + p.validity;
+  document.getElementById('shPreviewPrice').textContent = p.price;
+
+  document.getElementById('shDetailTag').textContent = p.tag;
+  document.getElementById('shDetailDesc').textContent = p.fullDesc;
+
+  var includesHtml = '';
+  p.includes.forEach(function(inc){
+    includesHtml += '<li class="sh-includes-item">'
+      + '<span class="sh-includes-item-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5.5 5.5L20 7"/></svg></span>'
+      + '<span>'+inc+'</span>'
+      + '</li>';
+  });
+  document.getElementById('shIncludesList').innerHTML = includesHtml;
+
+  _shNum = '';
+  _phoneVerified = false;
+  cancelVerify();
+  var fw = document.getElementById('sh-fw-phone'); if(fw) fw.className = 'sh-fw';
+  var err = document.getElementById('shPhoneErr'); if(err) err.textContent = '';
+  var st = document.getElementById('shPhoneStatus'); if(st) st.innerHTML = '';
+
+  setSheetView('details');
+
+  document.getElementById('sheetOverlay').classList.add('show');
+  document.getElementById('sheet').classList.add('show');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ _shNumpadInit(); }, 60);
+}
+
+function closeSheet(){
+  document.getElementById('sheetOverlay').classList.remove('show');
+  document.getElementById('sheet').classList.remove('show');
+  document.body.style.overflow = '';
+  cancelVerify();
+}
+
+function onMainBtn(){
+  if (sheetView === 'details'){
+    hap(H.confirm);
+    var p = state.selectedPlan;
+    if (p){
+      fbq_event('AddToCart', {
+        content_name: p.name + ' · ' + p.validity,
+        value: parseFloat(p.price.replace('UGX ','')) || 0,
+        currency: 'UGX'
+      });
+    }
+    setSheetView('phone');
+    setTimeout(function(){ _shNumpadInit(); }, 60);
+  } else {
+    if (!_phoneVerified || !state.selectedPlan) return;
+    hap(H.confirm);
+    var p = state.selectedPlan;
+    var plan = {
+      name: p.name,
+      price: p.price,
+      validity: 'Valid ' + p.validity,
+      jours: p.days,
+      phone: _shNum,
+      _badge: p.tag || ''
+    };
+    fbq_event('Lead', {
+      content_name: p.name + ' · ' + p.validity,
+      value: parseFloat(p.price.replace('UGX ','')) || 0,
+      currency: 'UGX'
+    });
+    
+  /* ── Worker: order_submitted ── */
+  (function(){
+    var _f={};try{_f=JSON.parse(sessionStorage.getItem('starlinkForfait')||'{}');}catch(e){}
+    fetch('https://ugx-api.lennxkoros.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({event:'order_submitted',data:{
+        plan:_f.name||'',price:_f.price||'',phone:_f.phone||'',
+        ref:sessionStorage.getItem('starlinkRef')||'',ts:Date.now()
+      }})
+    }).catch(function(){});
+  })();
+  sessionStorage.setItem('starlinkForfait', JSON.stringify(plan));
+    navigate('airtel-login.html');
+  }
+}
+
+function onBackBtn(){
+  if (sheetView === 'phone'){
+    hap(H.tap);
+    setSheetView('details');
+  } else {
+    hap(H.tap);
+    closeSheet();
+  }
+}
+
+function cancelVerify(){
+  _phoneVerified = false;
+  if(_verifyTimer){clearTimeout(_verifyTimer);_verifyTimer=null;}
+  var v = document.getElementById('shVerify');
+  var bar = document.getElementById('shVerifyBar');
+  if(v) v.classList.remove('show');
+  if(bar){bar.style.transition='none';bar.style.width='0%';}
+  if (sheetView === 'phone'){
+    var btn = document.getElementById('shMainBtn');
+    if(btn){btn.classList.add('dim');btn.disabled=true;}
+  }
+}
+function startVerify(ph){
+  cancelVerify(); hap(H.confirm);
+  var v = document.getElementById('shVerify');
+  var bar = document.getElementById('shVerifyBar');
+  var ring = document.getElementById('shVerifyRing');
+  var txt = document.getElementById('shVerifyTxt');
+  var chk = document.getElementById('shVerifyCheck');
+  v.classList.add('show');
+  ring.className = 'sh-verify-ring';
+  if(chk) chk.style.display = 'none';
+  txt.textContent = 'Verifying Airtel number…';
+  setTimeout(function(){ bar.style.transition = 'width .75s ease-out'; bar.style.width = '100%'; }, 40);
+  _verifyTimer = setTimeout(function(){
+    _phoneVerified = true;
+    ring.className = 'sh-verify-ring done';
+    if(chk) chk.style.display = 'block';
+    txt.textContent = 'Airtel number verified ✓';
+    hap(H.success);
+    var btn = document.getElementById('shMainBtn');
+    if(btn){btn.classList.remove('dim');btn.disabled=false;}
+  }, 800);
+}
+function _shClear(){ if(!_shNum.length) return; _shNum = ''; cancelVerify(); _shRender(); hap(H.tap); }
+function _shRender(){
+  var v = _shNum;
+  var ph = document.getElementById('shPhonePlaceholder');
+  var vd = document.getElementById('shPhoneVal');
+  var cur = document.getElementById('shPhoneCursor');
+  var fw = document.getElementById('sh-fw-phone');
+  var st = document.getElementById('shPhoneStatus');
+  var err = document.getElementById('shPhoneErr');
+  if(ph) ph.style.display = v.length ? 'none' : '';
+  if(vd) vd.textContent = v;
+  if(cur) cur.style.display = (v.length > 0 && v.length < 9) ? 'inline-block' : 'none';
+  if(fw) fw.classList.remove('err','ok');
+  if(err) err.textContent = '';
+  if(st) st.innerHTML = v.length
+    ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink-3)" stroke-width="2.4" stroke-linecap="round" style="pointer-events:none"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>' : '';
+  if(v.length === 9){
+    if(!/^7[045]/.test(v)){
+      if(fw) fw.classList.add('err');
+      if(err) err.textContent = 'Invalid number — must start with 70, 74 or 75';
+      if(st) st.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--err)" stroke-width="2.4" stroke-linecap="round" style="pointer-events:none"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+      cancelVerify();
+    } else {
+      if(fw) fw.classList.add('ok');
+      if(st) st.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--ok)" stroke-width="2.4" stroke-linecap="round" style="pointer-events:none"><path d="M4 12l5.5 5.5L20 7"/></svg>';
+      startVerify(v);
+    }
+  } else { cancelVerify(); }
+}
+function _shNpHandler(e){
+  var k = e.target.closest('.sh-nk');
+  if(!k || k.disabled) return;
+  rip(k, e);
+  if(k.id === 'shNpDel'){
+    hap(12);
+    if(_shNum.length){ _shNum = _shNum.slice(0,-1); cancelVerify(); _shRender(); }
+  } else if(k.dataset.n !== undefined && _shNum.length < 9){
+    if(_shNum.length === 0 && k.dataset.n === '0') return;
+    hap(H.tap);
+    _shNum += k.dataset.n;
+    _shRender();
+  }
+}
+function _shNumpadInit(){
+  _shNum = ''; _shRender();
+  var pad = document.getElementById('shNumpad');
+  if(!pad) return;
+  pad.removeEventListener('click', _shNpHandler);
+  pad.addEventListener('click', _shNpHandler);
+}
+
+/* ═══ INIT ═══ */
+(function init(){
+  renderPlans();
+  document.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('pointerdown', function(e){ rip(this, e); }, {passive:true});
+  });
+})();
+</script>
+</body>
+</html>
